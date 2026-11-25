@@ -1,6 +1,6 @@
 import requests
 
-wikiUrl="https://terraria.wiki.gg/"
+wikiUrl="https://terraria.wiki.gg/api.php"
 headers={"User-Agent":"MyTerrariaFAQBot/1.0 (student_project)"}
 #this list of words will be removed so the question only has a search question
 stopWords={"how","do","i","get","craft","make","find","summon","defeat","kill","what","is","the","a","an","to","in","terraria","of","for","where","can","you","collect","my"}
@@ -17,6 +17,25 @@ def extract_keywords(question: str ):
     else:
         return words
 
+def Wiki_Search(term: str)->tuple[str,str]:
+
+    #intializes the parameters of the web title
+    titleParams={"action":"query","list":"search","srsearch":term,"format":"json","srlimit":1}
+    #grabs the title of the article that can answer the question
+    response=requests.get(wikiUrl,params=titleParams,headers=headers).json()
+    searchResponses=response.get("query",{}).get("search",[])
+    if not searchResponses:
+        return "",""
+    title=searchResponses[0]["title"]
+
+    #does the same thing but for the summary instead
+    summaryParams={"action":"query","prop":"extracts","exintro":True,"explaintext":True,"titles":title,"format":"json"}
+    sumResponse=requests.get(wikiUrl,params=summaryParams,headers=headers).json()
+    pages=sumResponse.get("query",{}).get("pages",{})
+    summary=""
+    for page in pages.values():
+        summary+=page.get("extract","")
+    return title, summary
 
 def main():
     choice=print(
@@ -28,7 +47,10 @@ def main():
             print("Thanks and Goodbye")
             break
         term=extract_keywords(question)
-        print(term)
-
+        title, summary=Wiki_Search(term)
+        if summary:
+            print(summary)
+        else:
+            print("Please repharse or change your question")
 
 main()
