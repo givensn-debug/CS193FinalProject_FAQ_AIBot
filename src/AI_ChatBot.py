@@ -13,8 +13,10 @@ def extract_keywords(question: str ):
         if word not in stopWords:
             keywords.append(word)
     if keywords:
+        keywords=" ".join(keywords)
         return keywords
     else:
+        words=" ".join(words)
         return words
 
 def Wiki_Search(term: str)->tuple[str,str]:

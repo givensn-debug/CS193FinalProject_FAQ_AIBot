@@ -1,25 +1,29 @@
 This file shows whats important, urgent, both, or none. This is my Eisenhowerr Matrix.
 
+
 Do:
-Takes in User's Questions
-Scans questions for keywords to understand how to answer them
-Answers questions from a database of already answered questions
-Redirects users to related websites
++Takes in User's Questions
++Scans questions for keywords to understand how to answer them
++Pulls from databases to refine answers
 
 Delegate:
-Scale it out bigger so conversations flow better.
-Makes answers more accuracate to the question.
-Uses a database that isn't my own and pulls from that
-Redirects to specific article in a database or wiki
+-Scale it out bigger so conversations flow better.
++Makes answers more accuracate to the question.
++Uses a database that isn't my own and pulls from that
++Redirects to specific article in a database or wiki
 
 Schedule: 
-Pulls from databases to refine answers
-Able to answer questions in trial runs
-Answers are useful to users
++Redirects users to related websites
++Able to answer questions in trial runs
++Answers are useful to users
 
 Delete:
-Switch to RAG based AI
-Make the Bot understand context
+-Switch to RAG based AI
+-Make the Bot understand context
+-Answers questions from a database of already answered questions
+
+
+
 Items:
 - Takes in User's Questions
 - Scans questions for keywords to understand how to answer them
