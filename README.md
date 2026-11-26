@@ -11,14 +11,16 @@ First start with the input of the user's question then the program trims it so i
 Python, Intellij, Requests Library, Terraria Wiki
 
 ### Setup
-1. Clone the Repo with: git clone https://github.com/givensn-debug/CS193FinalProject_FAQ_AIBot
+1. Clone the Repo with: `git clone https://github.com/givensn-debug/CS193FinalProject_FAQ_AIBot`
 2. Create a virtual environment:
-   python3 -m venv .venv
+   `python3 -m venv .venv`
 3. Activate it:
     - Windows: `.venv\Scripts\activate`
     - macOS/Linux: `source .venv/bin/activate`
 4. Install dependencies:
-   pip install -r requirements.txt
+   `pip install -r requirements.txt`
+5. To run the program cd to src and run the code using: `cd src` then `python3 AI_ChatBot.py` 
+
 
 ### RoadMap
 Items:

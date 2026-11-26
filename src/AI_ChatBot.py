@@ -19,7 +19,6 @@ def extractKeywords(question: str ):
         return words
 
 def wikiSearch(term: str)->tuple[str,str,str]:
-
     #intializes the parameters of the web title
     titleParams={"action":"query","list":"search","srsearch":term,"format":"json","srlimit":1}
     #grabs the title of the article that can answer the question
